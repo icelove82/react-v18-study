@@ -24,22 +24,10 @@ const profiles = [
   },
 ];
 
-function getAwdStr(awd) {
-  let awdStr = "";
-
-  awd.forEach((it, idx) => {
-    if (idx === 0) {
-      awdStr += it;
-    } else {
-      awdStr += ", " + it;
-    }
-    return awdStr;
-  });
-}
 export function Profile(props) {
   return (
     <section className="profile">
-      <h2>props.name</h2>
+      <h2>{props.name}</h2>
       <img
         className="avatar"
         src={getImageUrl(props.imgId)}
@@ -53,7 +41,7 @@ export function Profile(props) {
           {props.pro}
         </li>
         <li>
-          <b>Awards: {props.awd.length} </b>({getAwdStr(props.awd)})
+          <b>Awards: {props.awd.length} </b>({props.awd.join(", ")})
         </li>
         <li>
           <b>Discovered: </b>
