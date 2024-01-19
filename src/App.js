@@ -1,28 +1,7 @@
 import "./App.css";
 
-import { getImageUrl } from "./util.js";
-
-const profiles = [
-  {
-    name: "Maria Skłodowska-Curie",
-    imgId: "szV5sdG",
-    pro: "physicist and chemist",
-    awd: [
-      "Nobel Prize in Physics",
-      "Nobel Prize in Chemistry",
-      "Davy Medal",
-      "Matteucci Medal",
-    ],
-    dsv: "polonium (chemical element)",
-  },
-  {
-    name: "Katsuko Saruhashi",
-    imgId: "YfeOqp2",
-    pro: "physicist and chemist",
-    awd: ["Miyake Prize for geochemistry", "Tanaka Prize"],
-    dsv: "a method for measuring carbon dioxide in seawater",
-  },
-];
+import { getImageUrl } from "./utils.js";
+import profiles from "./data.js";
 
 export function Profile(props) {
   return (
@@ -31,9 +10,9 @@ export function Profile(props) {
       <img
         className="avatar"
         src={getImageUrl(props.imgId)}
-        alt="props.name"
-        width={70}
-        height={70}
+        alt={props.name}
+        width={props.size}
+        height={props.size}
       />
       <ul>
         <li>
@@ -56,8 +35,8 @@ export default function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
-      <Profile {...profiles[0]} />
-      <Profile {...profiles[1]} />
+      <Profile {...profiles[0]} size={90} />
+      <Profile {...profiles[1]} size={90} />
     </div>
   );
 }
