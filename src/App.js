@@ -43,8 +43,8 @@ export default function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
-      <Profile {...profiles[0]} size={90} />
-      <Profile {...profiles[1]} size={90} />
+      <Profile {...profiles[0]} size={120} />
+      <Profile {...profiles[1]} />
 
       <br />
 
