@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css';
 
-import { getImageUrl } from "./utils.js";
-import profiles from "./data.js";
+import { getImageUrl } from './utils.js';
+import profiles from './data.js';
 
 export function Profile(props) {
   return (
@@ -20,7 +20,7 @@ export function Profile(props) {
           {props.pro}
         </li>
         <li>
-          <b>Awards: {props.awd.length} </b>({props.awd.join(", ")})
+          <b>Awards: {props.awd.length} </b>({props.awd.join(', ')})
         </li>
         <li>
           <b>Discovered: </b>
